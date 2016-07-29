@@ -1,10 +1,10 @@
 {
-    "name": "socialiteproviders/google",
+    "name": "akkyoh/socialite_google",
     "description": "Google OAuth2 Provider for Laravel Socialite",
     "license": "MIT",
     "authors": [{
-        "name": "DraperStudio",
-        "email": "hello@draperstud.io"
+        "name": "Evgenij Rusachenko",
+        "email": "yoh2010@gmail.com"
     }],
     "require": {
         "php": "^5.6 || ^7.0",
@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SocialiteProviders\\Google\\": "src/"
+            "Akkyoh\\SocialiteGoogle\\": "src/"
         }
     }
 }

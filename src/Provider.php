@@ -1,6 +1,6 @@
 <?php
 
-namespace SocialiteProviders\Google;
+namespace Akkyoh\SocialiteGoogle;
 
 use Laravel\Socialite\Two\ProviderInterface;
 use SocialiteProviders\Manager\OAuth2\AbstractProvider;
@@ -32,7 +32,7 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     protected function getAuthUrl($state)
     {
-        return $this->buildAuthUrlFromBase(
+        return $this -> buildAuthUrlFromBase(
             'https://accounts.google.com/o/oauth2/auth', $state
         );
     }
@@ -57,7 +57,7 @@ class Provider extends AbstractProvider implements ProviderInterface
             ],
         ]);
 
-        return json_decode($response->getBody()->getContents(), true);
+        return json_decode($response->getBody() -> getContents(), true);
     }
 
     /**
@@ -65,7 +65,7 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     protected function mapUserToObject(array $user)
     {
-        return (new User())->setRaw($user)->map([
+        return (new User()) -> setRaw($user) -> map([
             'id' => $user['id'], 'nickname' => array_get($user, 'nickname'),
             'name' => $user['displayName'],
             'email' => $user['emails'][0]['value'],
@@ -88,10 +88,10 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     public function user()
     {
-        $user = $this->mapUserToObject($this->getUserByToken(
-            $token = $this->getAccessToken($this->getCode())
+        $user = $this -> mapUserToObject($this -> getUserByToken(
+            $token = $this -> getAccessTokenResponse($this -> getCode())
         ));
 
-        return $user->setToken($token);
+        return $user -> setToken($token);
     }
 }

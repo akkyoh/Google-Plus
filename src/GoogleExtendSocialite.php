@@ -1,6 +1,6 @@
 <?php
 
-namespace SocialiteProviders\Google;
+namespace Akkyoh\SocialiteGoogle;
 
 use SocialiteProviders\Manager\SocialiteWasCalled;
 
@@ -13,7 +13,7 @@ class GoogleExtendSocialite
      */
     public function handle(SocialiteWasCalled $socialiteWasCalled)
     {
-        $socialiteWasCalled->extendSocialite(
+        $socialiteWasCalled -> extendSocialite(
             'google', __NAMESPACE__.'\Provider'
         );
     }
