@@ -27,7 +27,7 @@ composer require akkyoh/socialite_google
 **3. ADD THE EVENT AND LISTENERS**
 - Add SocialiteProviders\Manager\SocialiteWasCalled event to your listen[] array in <app_name>/Providers/EventServiceProvider.
 - Add your listeners (i.e. the ones from the providers) to the SocialiteProviders\Manager\SocialiteWasCalled[] that you just created.
-- The listener that you add for this provider is 'Akkyoh\SocialiteGithub\GithubExtendSocialite@handle',.
+- The listener that you add for this provider is 'Akkyoh\SocialiteGoogle\GoogleExtendSocialite@handle',.
 - Note: You do not need to add anything for the built-in socialite providers unless you override them with your own providers.
 ```
 // For example
