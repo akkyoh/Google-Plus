@@ -50,14 +50,14 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     protected function getUserByToken($token)
     {
-        $response = $this->getHttpClient()->get(
+        $response = $this -> getHttpClient() -> get(
             'https://www.googleapis.com/plus/v1/people/me', [
             'headers' => [
-                'Authorization' => 'Bearer '.$token,
+                'Authorization' => 'Bearer '.$token['access_token'],
             ],
         ]);
 
-        return json_decode($response->getBody() -> getContents(), true);
+        return json_decode($response -> getBody() -> getContents(), true);
     }
 
     /**
