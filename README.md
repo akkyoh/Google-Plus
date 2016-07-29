@@ -34,7 +34,7 @@ composer require akkyoh/socialite_google
 protected $listen = [
     \SocialiteProviders\Manager\SocialiteWasCalled::class => [
         // add your listeners (aka providers) here
-        'Akkyoh\SocialiteGithub\GithubExtendSocialite@handle',
+        'Akkyoh\SocialiteGoogle\GoogleExtendSocialite@handle',
     ],
 ];
 ```
